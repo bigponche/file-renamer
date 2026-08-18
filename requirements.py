@@ -9,5 +9,7 @@
 
 START_NUMBER = 1
 NUMBER_DIGITS = 3
+FORBIDDEN_CHARACTERS = '@\/<>*?:"'
+
 
 

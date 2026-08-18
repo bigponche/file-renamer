@@ -1,4 +1,4 @@
-from requirements import NUMBER_DIGITS, START_NUMBER
+from requirements import NUMBER_DIGITS, START_NUMBER,FORBIDDEN_CHARACTERS
 import os
 
 def build_new_name(old_name,prefix,suffix, number):
@@ -41,3 +41,36 @@ def undo_rename(path, successful_renames):
             os.rename(current_path,target_path)
         except FileExistsError as e:
             print(f"Could not rename {file['old_name']}: {e}")
+            
+def get_valid_folder():
+    while True:
+        folder= input('Enter a valid folder ')
+        if not os.path.isdir(folder):
+            print('That is not a valid folder')
+        else:
+            return folder
+
+def get_valid_prefix_and_suffix(prompt):
+    
+    while True:
+        names = input(prompt)
+        for char in FORBIDDEN_CHARACTERS:
+            if char in names:
+                print('Do not enter an invalid character @\/<>*?:"')
+            else:
+                continue
+        return names
+    
+            
+    
+def get_valid_text(prompt):
+    while True:
+        names = input(prompt)
+        has_forbidden_char = False
+        for char in FORBIDDEN_CHARACTERS:
+            if char in names:
+                has_forbidden_char = True
+        if has_forbidden_char:
+            print('Do not enter an invalid character @\\/<>*?:"')
+        else:
+            return names
