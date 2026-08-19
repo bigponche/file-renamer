@@ -58,4 +58,8 @@ python main.py
 
 ## Risk Note
 
+<<<<<<< HEAD
 See [RISK_NOTE.md](./RISK_NOTE.md).
+=======
+See [RISK_NOTE.md](./RISK_NOTE.md).
+>>>>>>> 22343a5aa3ac468a78be47ca34a1fd91f9dfc886
