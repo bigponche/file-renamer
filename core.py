@@ -50,19 +50,7 @@ def get_valid_folder():
         else:
             return folder
 
-def get_valid_prefix_and_suffix(prompt):
-    
-    while True:
-        names = input(prompt)
-        for char in FORBIDDEN_CHARACTERS:
-            if char in names:
-                print('Do not enter an invalid character @\/<>*?:"')
-            else:
-                continue
-        return names
-    
             
-    
 def get_valid_text(prompt):
     while True:
         names = input(prompt)
@@ -74,3 +62,8 @@ def get_valid_text(prompt):
             print('Do not enter an invalid character @\\/<>*?:"')
         else:
             return names
+
+def show_dry_run(files_list):
+    for file in files_list:
+        print(f"{file['old_name']} -> {file['new_name']}")
+    
