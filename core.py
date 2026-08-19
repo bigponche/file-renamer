@@ -67,3 +67,13 @@ def show_dry_run(files_list):
     for file in files_list:
         print(f"{file['old_name']} -> {file['new_name']}")
     
+def get_confirmation(prompt):
+    while True:
+        confirmation = input(prompt)
+        if confirmation.lower().strip() == 'y':
+            return True
+        elif confirmation.lower().strip() == 'n':
+            return False
+        else:
+            print('choose a valid option')
+            
